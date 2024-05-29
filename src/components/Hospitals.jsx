@@ -12,7 +12,7 @@ const Hospitals = () => {
     const fetchSavedHospitals = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8000/api/get-hospitals"
+          "https://healthplanhubbackend.vercel.app/api/get-hospitals"
         );
         setHospitals(response.data.hospitals || []);
       } catch (err) {
@@ -25,7 +25,7 @@ const Hospitals = () => {
   const handleClickInfo = async (hospitalId) => {
     try {
       const response = await axios.get(
-        `http://localhost:8000/api/get-hospital-info/${hospitalId}`
+        `https://healthplanhubbackend.vercel.app/api/get-hospital-info/${hospitalId}`
       );
       console.log(response.data.hospitals);
       navigate("/dashboard/hospital-info", {

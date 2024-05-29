@@ -25,7 +25,7 @@ const Plans = () => {
     };
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/treatmentplan",
+        "https://healthplanhubbackend.vercel.app/api/treatmentplan",
         newPlan
       );
       setPlans([...plans, newPlan]);
@@ -50,7 +50,7 @@ const Plans = () => {
       const userId = localStorage.getItem("userid");
       try {
         const response = await axios.get(
-          `http://localhost:8000/api/get-treatmentplan/${userId}`
+          `https://healthplanhubbackend.vercel.app/api/get-treatmentplan/${userId}`
         );
       } catch (error) {
         console.error("Error fetching plans:", error);

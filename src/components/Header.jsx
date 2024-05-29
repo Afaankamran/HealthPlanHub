@@ -7,7 +7,7 @@ const Header = () => {
   const handleLogOut = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.get("http://localhost:8000/api/logout", {});
+      const response = await axios.get("https://healthplanhubbackend.vercel.app/api/logout", {});
       if (response.data) {
         localStorage.removeItem("token");
         localStorage.removeItem("userid");

@@ -21,7 +21,7 @@ const Signup = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/register",
+        "https://healthplanhubbackend.vercel.app/api/register",
         formData
       );
       setFormData({

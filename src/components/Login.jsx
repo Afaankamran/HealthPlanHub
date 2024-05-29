@@ -20,7 +20,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/login",
+        "https://healthplanhubbackend.vercel.app/api/login",
         formData
       );
       if (response.data.token) {

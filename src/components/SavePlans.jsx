@@ -13,7 +13,7 @@ const SavePlans = () => {
       }
       try {
         const response = await axios.get(
-          `http://localhost:8000/api/get-treatmentplan/${userID}`
+          `https://healthplanhubbackend.vercel.app/api/get-treatmentplan/${userID}`
         );
         setPlans(response.data.plans);
       } catch (error) {
@@ -28,7 +28,7 @@ const SavePlans = () => {
     const planId = plans[index].treatmentplan_id;
     try {
       await axios.delete(
-        `http://localhost:8000/api/delete-treatmentplan/${userID}/${planId}`
+        `https://healthplanhubbackend.vercel.app/api/delete-treatmentplan/${userID}/${planId}`
       );
       // Remove the plan from the state
       const updatedPlans = [...plans];

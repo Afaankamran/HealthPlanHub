@@ -19,7 +19,7 @@ const HospitalInfo = () => {
     const fetchFeedbacks = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8000/api/get-hospital-review/${hospital.hospital_id}`
+          `https://healthplanhubbackend.vercel.app/api/get-hospital-review/${hospital.hospital_id}`
         );
         setRating(response.data.average_rating || "Unrated");
         setFeedbacks(response.data.feedback || []);
@@ -35,7 +35,7 @@ const HospitalInfo = () => {
     try {
       const userID = localStorage.getItem("userid");
       await axios.post(
-        `http://localhost:8000/api/hospital-review/${userID}/${hospital.hospital_id}`,
+        `https://healthplanhubbackend.vercel.app/api/hospital-review/${userID}/${hospital.hospital_id}`,
         {
           rating: formRating,
           hospital_feedback: formFeedback,
@@ -47,7 +47,7 @@ const HospitalInfo = () => {
 
       // Refetch the feedbacks to update the list
       const response = await axios.get(
-        `http://localhost:8000/api/get-hospital-review/${hospital.hospital_id}`
+        `https://healthplanhubbackend.vercel.app/api/get-hospital-review/${hospital.hospital_id}`
       );
       setRating(response.data.average_rating || "Unrated");
       setFeedbacks(response.data.feedback || []);
@@ -58,7 +58,7 @@ const HospitalInfo = () => {
   const fetchHospitalInfo = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8000/api/get-hospital-info/${hospital.hospital_id}`
+        `https://healthplanhubbackend.vercel.app/api/get-hospital-info/${hospital.hospital_id}`
       );
       setHospitalLocation(response.data.hospitals[0].hospital_link);
     } catch (err) {
